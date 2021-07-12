@@ -1,0 +1,5 @@
+<h1>Recommendation for all</h1>
+<label for="recommendation"></label>
+<textarea contenteditable="false" class="w-100" rows="8" id="recommendation" *ngFor="let recommendation of recommendations | async">
+  {{recommendation.content}}
+</textarea>

@@ -1,0 +1,18 @@
+<kendo-scheduler [selectedDate]="selectedDate"
+                 [resources]="resources | async"
+                 [events]="events | async"
+                 [group]="group"
+                 startTime="23:00"
+                 endTime="00:00"
+                 style="height: 350px;">
+  <ng-template kendoSchedulerToolbarTemplate>
+    <button kendoSchedulerPDFCommand>Export PDF</button>
+    <ul kendoSchedulerToolbarNavigation></ul>
+    <ul kendoSchedulerToolbarViewSelector></ul>
+  </ng-template>
+  <kendo-scheduler-week-view>
+    <ng-template kendoSchedulerMajorTimeHeaderTemplate></ng-template>
+  </kendo-scheduler-week-view>
+  <kendo-scheduler-month-view></kendo-scheduler-month-view>
+  <kendo-scheduler-pdf fileName="scheduler.pdf"></kendo-scheduler-pdf>
+</kendo-scheduler>

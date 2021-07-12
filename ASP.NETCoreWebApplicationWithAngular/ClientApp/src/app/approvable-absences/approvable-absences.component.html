@@ -1,0 +1,20 @@
+ <h1 id="tableLabel">Approvable absences</h1>
+ <table class="table table-striped" aria-labelledby="tableLabel">
+   <thead class="w-100">
+   <tr>
+     <th>Employee name</th>
+     <th>Absence type</th>
+     <th>Start</th>
+     <th>End</th>
+     <th>Actions</th>
+   </tr>
+   </thead>
+   <tr *ngFor="let approvableAbsence of approvableAbsences | async">
+     <td>{{approvableAbsence.applicationUser.userName}}</td>
+     <td>{{absenceTypes[approvableAbsence.absenceType]}}</td>
+     <td>{{approvableAbsence.start.toString().replace('T00:00:00', '')}}</td>
+     <td>{{approvableAbsence.end.toString().replace('T00:00:00', '')}}</td>
+     <td><button (click)="Approve(approvableAbsence)">Approve</button></td>
+     <td><button (click)="Disapprove(approvableAbsence)">Disapprove</button></td>
+   </tr>
+ </table>

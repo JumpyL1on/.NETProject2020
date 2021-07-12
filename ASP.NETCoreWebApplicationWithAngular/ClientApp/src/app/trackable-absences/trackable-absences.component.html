@@ -1,0 +1,57 @@
+<h1>Choose absence type</h1>
+<ul class="nav nav-pills nav-fill" role="tablist">
+  <li class="nav-item">
+     <a class="nav-link active" id="pills-sickDay-tab" data-toggle="tab" href="#sickDay" role="tab" aria-controls="sickDay" aria-selected="true">SickDay</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-sickLeave-tab" data-toggle="tab" href="#sickLeave" role="tab" aria-controls="sickLeave" aria-selected="false">SickLeave</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-vacation-tab" data-toggle="tab" href="#vacation" role="tab" aria-controls="vacation" aria-selected="false">Vacation</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane inline fade show active" id="sickDay" role="tabpanel" aria-labelledby="pills-sickDay-tab">
+    <div class="form-group">
+      <label for="sickDayStart" class="col-form-label">Start</label>
+      <input class="form-control" type="date" id="sickDayStart" [(ngModel)]="sickDay">
+    </div>
+    <div class="form-group">
+      <button class="w-100" (click)="approveSickDay()">Approve sickday</button>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="sickLeave" role="tabpanel" aria-labelledby="pills-sickLeave-tab">
+    <div class="form-group">
+      <label for="sickLeaveStart" class="col-form-label">Start</label>
+      <input class="form-control" type="date" id="sickLeaveStart" [(ngModel)]="sickLeaveStart">
+    </div>
+    <div class="form-group">
+      <label for="sickLeaveEnd" class="col-form-label">End</label>
+      <input class="form-control" type="date" id="sickLeaveEnd" [(ngModel)]="sickLeaveEnd">
+    </div>
+    <div class="form-group">
+      <button class="w-100" (click)="requestSickLeave()">Request sickleave</button>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="vacation" role="tabpanel" aria-labelledby="pills-vacation-tab">
+    <div class="form-group">
+      <label for="vacationStart" class="col-form-label">Start</label>
+      <input class="form-control" type="date" id="vacationStart" [(ngModel)]="vacationStart">
+    </div>
+    <div class="form-group">
+      <label for="vacationEnd" class="col-form-label">End</label>
+      <input class="form-control" type="date" id="vacationEnd" [(ngModel)]="vacationEnd">
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" id="unpaidVacation" [value]="false" [(ngModel)]="isPaid">
+      <label class="form-check-label" for="unpaidVacation">Unpaid vacation</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" id="paidVacation" [value]="true" [(ngModel)]="isPaid">
+      <label class="form-check-label" for="paidVacation">Paid vacation</label>
+    </div>
+    <div class="form-group">
+      <button class="w-100" (click)="requestVacation()">Request vacation</button>
+    </div>
+  </div>
+</div>
